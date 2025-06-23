@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import ScoreGauge from './components/ScoreGauge';
+import ContentEditor from './components/ContentEditor';
+import StructureViewer from './components/StructureViewer';
+import SuggestionsPanel from './components/SuggestionsPanel';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="dashboard">
+      <div className="panel structure-panel">
+        <h2>Structure</h2>
+        <StructureViewer />
+      </div>
+      <div className="panel main-panel">
+        <h2>Optimization Score</h2>
+        <ScoreGauge />
+        <h2>Content Editor</h2>
+        <ContentEditor />
+      </div>
+      <div className="panel suggestions-panel">
+        <h2>Suggestions</h2>
+        <SuggestionsPanel />
+      </div>
+      
     </div>
   );
-}
+};
 
 export default App;
